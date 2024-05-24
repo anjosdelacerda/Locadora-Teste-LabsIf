@@ -79,4 +79,16 @@ export class UserService {
     await this.userRepository.update(id, { isActive: false });
     return HttpStatus.NO_CONTENT;
   }
+
+  async findByEmail(email: string) {
+    const findUser = this.userRepository.findOne({ where: { email } });
+    if (!findUser) {
+      throw new HttpException(
+        `User by email ${email} is not found`,
+        HttpStatus.BAD_REQUEST,
+      );
+    }
+
+    return findUser;
+  }
 }
