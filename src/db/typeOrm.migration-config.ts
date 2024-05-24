@@ -1,9 +1,9 @@
 import { ConfigService } from '@nestjs/config';
 import { config } from 'dotenv';
 import { DataSource, DataSourceOptions } from 'typeorm';
-import { UserEntity } from './entities/users.entity';
 import { CarEntity } from './entities/cars.entity';
 import { RentEntity } from './entities/rents.entity';
+import { UserEntity } from './entities/users.entity';
 
 config();
 

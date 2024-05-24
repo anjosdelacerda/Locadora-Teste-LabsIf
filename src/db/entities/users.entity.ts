@@ -11,7 +11,7 @@ export class UserEntity {
   @Column({ length: 256 })
   name: string;
 
-  @Column({ length: 256 })
+  @Column({ length: 256, unique: true })
   email: string;
 
   @Column({ length: 1 })
@@ -26,7 +26,7 @@ export class UserEntity {
   @Column({ length: 256 })
   password: string;
 
-  @Column({ type: 'boolean', default: false })
+  @Column({ type: 'boolean', default: true })
   isActive: boolean;
 
   @OneToMany(() => CarEntity, (car) => car.owner_by)
