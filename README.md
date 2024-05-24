@@ -1,79 +1,73 @@
-# Locadora-Teste-LabsIf
+<p align="center">
+  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
+</p>
 
-LabsIF : sistema para gerenciamento de uma locadora de carros 
+[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
+[circleci-url]: https://circleci.com/gh/nestjs/nest
 
+  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
+    <p align="center">
+<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
+<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
+<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
+<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
+<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
+<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
+<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
+<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
+  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
+    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
+  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
+</p>
+  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
+  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-# Indice 
+## Description
 
-<a name="ancora"></a>
+[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
-- [Teste](#ancora1)
-- [Requisitos](#ancora2)
-- [Escopo](#ancora3)
-- [Criterios de Avaliação](#ancora4)
-- [Dicas](#ancora5)
-- [Instruções](#ancora6)
+## Installation
 
-#
-<a id="ancora1"></a>
-# Teste
+```bash
+$ npm install
+```
 
-O desafio é criar o backend para um sistema de gerenciamento de uma locadora de carro.
+## Running the app
 
+```bash
+# development
+$ npm run start
 
+# watch mode
+$ npm run start:dev
 
-#
-<a id="ancora2"></a>
-# Requisitos:
+# production mode
+$ npm run start:prod
+```
 
-<li> Desenvolver uma API RESTful que implemente as operações CRUD (Create, Read, Update, Delete). </li>
-<li> A API deve ser integrada com um banco de dados relacional ou não, caso selecione relacional use a plataforma da Neon ou Vercel para criação de sua instância gratuita. </li>
-<li> Escolha uma plataforma de hospedagem para a sua aplicação, como Neon, Vercel ou outra de sua preferência e execulte o deploy.</li>
-<li> A API deve ser desenvolvida usando uma dessas linguagens de programação  Python, Java, Node.js ou TypeScript. </li>
+## Test
 
-#
-<a id="ancora3"></a>
-# Escopo:
+```bash
+# unit tests
+$ npm run test
 
-A API deve suportar as seguintes operações CRUD:
+# e2e tests
+$ npm run test:e2e
 
-[POST] /carros :Criar um carro, deve permitir que um usuário crie um novo carro, fornecendo as informações básicas, como modelo, marca, descrição, preço de aluguel e categoria.
+# test coverage
+$ npm run test:cov
+```
 
-[POST] /carros/alugar : Alugar um carro, deve permitir que um usuário alugue um carro, fornecendo o ID do carro, a data e hora de início do aluguel e a data e hora de fim do aluguel.
+## Support
 
-[GET] /carros : Listar todos os carros, deve permitir que um usuário liste todos os carros.
+Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
 
-[GET] /carros/{id} : Listar carro, apenas um carro específico, fornecendo o ID do carro.
+## Stay in touch
 
+- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
+- Website - [https://nestjs.com](https://nestjs.com/)
+- Twitter - [@nestframework](https://twitter.com/nestframework)
 
-[PUT] /carros/{id} : Atualizar um carro, deve permitir que um usuário atualize as informações de um carro existente, fornecendo o ID do carro e as informações a serem atualizadas.
+## License
 
-[DELETE] /carros/{id}: Excluir um carro, deve permitir que um usuário exclua um carro existente, fornecendo o ID do carro.
-
-[GET] /carros/disponiveis : Listar carros disponíveis, essa operação deve retornar uma lista de todos os carros que estão disponíveis para aluguel.
-
-[GET] /carros/alugados :Listar carros alugados, essa operação deve retornar uma lista de todos os carros que estão alugados.
-
-#
-<a id="ancora4"></a>
-# Critérios de avaliação:
-
-<li> A API deve estar completa e funcionando de acordo com os requisitos. </li>
-<li>A API deve ser bem estruturada e organizada.</li>
-<li>A API deve ser testável, para facilitar o desenvolvimento e testes da API, utilize umas das ferramentas Postman ou Insomnia para realizar as requisições HTTP.</li>
-
-# 
-<a id="ancora5"></a>
-# Dicas : 
-
-<li>Comece pelo básico e implemente as operações CRUD básicas primeiro.</li>
-<li>Use uma ferramenta de banco de dados para criar o esquema do banco de dados.</li>
-<li>Faça um boa documentação da api, utilizando  swagger. </li>
-<li>Escolha um ORM (Object-Relational Mapping) para facilitar a interação com o banco de dados. Você pode utilizar SQLAlchemy para Python, Sequelize para Node.js, ou Mongoose para MongoDB, ou qualquer outro que lhe auxilie.</li>
-
-#
-<a id="ancora6"></a>
-# Intruções:
-
-<li> Para o inicio do teste, faça um clone desse repositorio ou um fork </li>
-<li> Ao final do teste envie para esse endereços com o assunto "Teste Labs Backend" :  processo.seletivo@labsif.com.br /  liriel.novais@labsif.com.br </li>
+Nest is [MIT licensed](LICENSE).
