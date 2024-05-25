@@ -4,7 +4,7 @@ import {
   Injectable,
   NotFoundException,
 } from '@nestjs/common';
-import { CarDto, CarUpdateDto } from './car.dto';
+import { CarDto, CarUpdateDto, RentDto } from './car.dto';
 import { InjectRepository } from '@nestjs/typeorm';
 import { CarEntity } from 'src/db/entities/cars.entity';
 import { Repository } from 'typeorm';
@@ -92,5 +92,42 @@ export class CarService {
     }
 
     return HttpStatus.NO_CONTENT;
+  }
+
+  async rentCar(userId: string, rent: RentDto) {
+    const findUser = await this.userRepository.findOne({
+      where: { id: userId },
+    });
+
+    if (!findUser) {
+      throw new NotFoundException(`to rent a car, you need to be logged in`);
+    }
+
+    const findCar = await this.carRepository.findOne({
+      where: { id: rent.isCar },
+    });
+
+    if (!findCar) {
+      throw new NotFoundException(`Car by id ${rent.isCar} is not found`);
+    }
+
+    if (findCar.isRent === true) {
+      throw new HttpException(
+        `This car is not available`,
+        HttpStatus.UNAUTHORIZED,
+      );
+    }
+
+    await this.carRepository.update(findCar.id, { isRent: true });
+
+    const newRent = new RentEntity();
+
+    newRent.startDate = rent.startDate;
+    newRent.endDate = rent.endDate;
+    newRent.car = findCar;
+    newRent.renter = findUser;
+
+    await this.rentRepository.save(newRent);
+    return HttpStatus.OK;
   }
 }

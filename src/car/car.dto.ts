@@ -1,5 +1,6 @@
 import {
   IsBoolean,
+  IsDateString,
   IsEnum,
   IsInt,
   IsOptional,
@@ -62,6 +63,21 @@ export class CarUpdateDto {
   @IsBoolean()
   @IsOptional()
   isRent: boolean;
+}
+
+export class RentDto {
+  @IsUUID()
+  @IsOptional()
+  id: string;
+
+  @IsDateString()
+  startDate: Date;
+
+  @IsDateString()
+  endDate: Date;
+
+  @IsUUID()
+  isCar: string;
 }
 
 export class CarRouteParameters {

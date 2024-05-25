@@ -11,7 +11,7 @@ import {
 } from '@nestjs/common';
 import { CarService } from './car.service';
 import { AuthGuard } from 'src/auth/auth.guard';
-import { CarDto, CarRouteParameters, CarUpdateDto } from './car.dto';
+import { CarDto, CarRouteParameters, CarUpdateDto, RentDto } from './car.dto';
 
 @UseGuards(AuthGuard)
 @Controller('carros')
@@ -47,5 +47,11 @@ export class CarController {
   @Delete('/:id')
   async removeCar(@Param() params: CarRouteParameters) {
     await this.carService.removeCar(params.id);
+  }
+
+  @Post('/alugar')
+  async rentCar(@Body() rent: RentDto, @Req() req) {
+    const userId = req.user.sub;
+    return await this.carService.rentCar(userId, rent);
   }
 }
