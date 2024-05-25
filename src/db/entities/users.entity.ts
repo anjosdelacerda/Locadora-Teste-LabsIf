@@ -2,6 +2,7 @@ import { Column, Entity, OneToMany, PrimaryColumn } from 'typeorm';
 import { v4 as uuid } from 'uuid';
 import { CarEntity } from './cars.entity';
 import { RentEntity } from './rents.entity';
+import { Exclude } from 'class-transformer';
 
 @Entity({ name: 'users' })
 export class UserEntity {
@@ -24,6 +25,7 @@ export class UserEntity {
   birthday: Date;
 
   @Column({ length: 256 })
+  @Exclude()
   password: string;
 
   @Column({ type: 'boolean', default: true })
