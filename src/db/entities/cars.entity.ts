@@ -23,7 +23,10 @@ export class CarEntity {
   @Column({ length: 256 })
   category: string;
 
-  @ManyToOne(() => UserEntity, { onDelete: 'CASCADE' })
+  @Column({ type: 'boolean', default: false })
+  isRent: boolean;
+
+  @ManyToOne(() => UserEntity, { onDelete: 'CASCADE', eager: true })
   owner_by: UserEntity;
 
   @OneToMany(() => RentEntity, (rent) => rent.car)
