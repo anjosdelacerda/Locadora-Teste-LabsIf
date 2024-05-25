@@ -12,7 +12,9 @@ import {
 import { CarService } from './car.service';
 import { AuthGuard } from 'src/auth/auth.guard';
 import { CarDto, CarRouteParameters, CarUpdateDto, RentDto } from './car.dto';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('cars')
 @UseGuards(AuthGuard)
 @Controller('carros')
 export class CarController {
