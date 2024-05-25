@@ -130,4 +130,12 @@ export class CarService {
     await this.rentRepository.save(newRent);
     return HttpStatus.OK;
   }
+
+  async availableCars() {
+    return await this.carRepository.find({ where: { isRent: false } });
+  }
+
+  async noAvailableCars() {
+    return await this.carRepository.find({ where: { isRent: true } });
+  }
 }

@@ -23,6 +23,16 @@ export class CarController {
     return await this.carService.listCars();
   }
 
+  @Get('/disponiveis')
+  async availableCars() {
+    return await this.carService.availableCars();
+  }
+
+  @Get('/alugados')
+  async noAvailableCars() {
+    return await this.carService.noAvailableCars();
+  }
+
   @Post()
   async createCar(@Req() req, @Body() car: CarDto) {
     const userId = req.user.sub;
