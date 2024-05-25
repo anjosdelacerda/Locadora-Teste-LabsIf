@@ -1,38 +1,48 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+## Pré-requisitos (para rodar localmente)
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+Antes de iniciar, certifique-se de ter as seguintes ferramentas instaladas na sua máquina:
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+- [Node.js](https://nodejs.org/)
+- [PostgreSQL](https://www.postgresql.org/)
 
-## Description
+### Instalando Node.js
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Para instalar o Node.js, siga os passos abaixo:
 
-## Installation
+1. Vá para o site oficial do Node.js: [https://nodejs.org/](https://nodejs.org/)
+2. Baixe a versão LTS recomendada para o seu sistema operacional.
+3. Siga as instruções do instalador para completar a instalação.
+
+Para verificar se a instalação foi bem-sucedida, abra um terminal e execute:
+
+```bash
+node -v
+
+## Instalando PostgreSQL
+
+Para instalar o PostgreSQL, siga os passos abaixo:
+
+1. Vá para o site oficial do PostgreSQL: [https://www.postgresql.org/](https://www.postgresql.org/)
+2. Clique em "Download" e selecione o seu sistema operacional.
+3. Baixe o instalador correspondente ao seu sistema operacional e siga as instruções fornecidas pelo instalador.
+
+### Configurando PostgreSQL
+
+Durante a instalação, você será solicitado a criar uma senha para o usuário "postgres". Anote essa senha, pois você precisará dela mais tarde.
+
+Para verificar se a instalação foi bem-sucedida, abra um terminal e execute:
+
+```bash
+psql --version
+
+
+## Instalação
 
 ```bash
 $ npm install
 ```
 
-## Running the app
+## Startando o App
 
 ```bash
 # development
@@ -45,29 +55,7 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
-## Test
+## Startando o APP no deploy
 
-```bash
-# unit tests
-$ npm run test
+# importe o arquivo 'testador-de-rotas.json' no insomnia/postman ou no seu software client favorito.
 
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
