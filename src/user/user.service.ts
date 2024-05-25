@@ -63,6 +63,10 @@ export class UserService {
       );
     }
 
+    if (user.password) {
+      user.password = hashSync(user.password, 10);
+    }
+
     await this.userRepository.update(id, user);
     return HttpStatus.OK;
   }
